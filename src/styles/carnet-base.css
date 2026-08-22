@@ -1,0 +1,27 @@
+/* Tamaño físico real de un carnet CR80: 85.6mm x 54mm.
+   Este bloque lo comparten TODAS las plantillas: cada plantilla solo debe
+   decorar el interior, nunca cambiar el tamaño exterior, para que la
+   grilla de impresión siga siendo consistente sin importar cuál se use. */
+.carnet-base {
+  width: 85.6mm;
+  height: 54mm;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.5mm;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  break-inside: avoid;
+  page-break-inside: avoid;
+  font-family:
+    'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+@media print {
+  .carnet-base {
+    box-shadow: none;
+    border: 0.2mm solid #d8d8d8;
+  }
+}

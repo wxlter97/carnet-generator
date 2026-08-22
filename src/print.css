@@ -1,0 +1,35 @@
+/* Técnica "imprimir solo este elemento" sin dependencias: oculta todo el
+   body y vuelve a mostrar únicamente .vista-impresion. Así el usuario
+   imprime directo desde el navegador (Ctrl/Cmd+P o el botón Imprimir) y
+   solo salen los carnets, sin el header/stepper/toolbar de la app. */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .vista-impresion,
+  .vista-impresion * {
+    visibility: visible;
+  }
+
+  .vista-impresion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .no-imprimir {
+    display: none !important;
+  }
+
+  /* Al imprimir siempre a tamaño real, sin importar el zoom elegido en pantalla. */
+  .print-grid {
+    zoom: 1 !important;
+  }
+}

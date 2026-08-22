@@ -1,0 +1,119 @@
+.tpl-moderno {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 45%, #6c5ce7 100%);
+  color: #fff;
+  padding: 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.tpl-moderno__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.tpl-moderno__blob--1 {
+  width: 34mm;
+  height: 34mm;
+  top: -14mm;
+  right: -10mm;
+}
+
+.tpl-moderno__blob--2 {
+  width: 16mm;
+  height: 16mm;
+  bottom: -8mm;
+  right: 14mm;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tpl-moderno__top {
+  display: flex;
+  align-items: center;
+  gap: 2.4mm;
+  position: relative;
+  z-index: 1;
+}
+
+.tpl-moderno__foto-marco {
+  width: 16.5mm;
+  height: 16.5mm;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  border: 0.6mm solid #fff;
+  box-shadow: 0 0.4mm 1.5mm rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c5ce7;
+}
+
+.tpl-moderno__foto-marco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tpl-moderno__nombre {
+  font-size: 9.6px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tpl-moderno__grado-pill {
+  display: inline-block;
+  margin-top: 0.8mm;
+  padding: 0.5mm 2mm;
+  background: rgba(255, 255, 255, 0.92);
+  color: #6c5ce7;
+  font-size: 6px;
+  font-weight: 800;
+  border-radius: 3mm;
+  letter-spacing: 0.2px;
+}
+
+.tpl-moderno__datos {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.5mm;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6mm 2.4mm;
+  font-size: 6.4px;
+  font-weight: 600;
+}
+
+.tpl-moderno__datos span b {
+  font-weight: 800;
+}
+
+.tpl-moderno__footer {
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.3mm solid rgba(255, 255, 255, 0.4);
+  padding-top: 1mm;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.tpl-moderno__footer-centro {
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55mm;
+}
