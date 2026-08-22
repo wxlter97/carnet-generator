@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useWizard } from './state/WizardContext';
 import { getPlantilla } from './templates';
 import { Stepper } from './components/Stepper';
+import { IconBadge, IconChevronLeft, IconChevronRight } from './components/icons';
 import { Step1TemplateSelect } from './steps/Step1TemplateSelect';
 import { Step2UploadData } from './steps/Step2UploadData';
 import { Step3ColumnMapping } from './steps/Step3ColumnMapping';
@@ -35,7 +36,10 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header no-imprimir">
-        <h1>🪪 Generador de Carnets</h1>
+        <div className="app-header__titulo">
+          <IconBadge size={24} />
+          <h1>Generador de Carnets</h1>
+        </div>
         <button type="button" className="boton-texto" onClick={() => {
           if (confirm('Esto borra la plantilla elegida, los datos cargados y las fotos. ¿Continuar?')) {
             reiniciarTodo();
@@ -64,7 +68,7 @@ function App() {
             disabled={state.paso === 1}
             onClick={() => irAPaso(state.paso - 1)}
           >
-            ← Atrás
+            <IconChevronLeft size={15} /> Atrás
           </button>
           <button
             type="button"
@@ -72,7 +76,7 @@ function App() {
             disabled={!puedeContinuar}
             onClick={() => irAPaso(state.paso + 1)}
           >
-            Continuar →
+            Continuar <IconChevronRight size={15} />
           </button>
         </footer>
       )}

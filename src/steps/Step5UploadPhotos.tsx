@@ -3,6 +3,7 @@ import { useWizard } from '../state/WizardContext';
 import { getPlantilla } from '../templates';
 import { extraerFotosDeZip } from '../utils/zipPhotos';
 import { buscarFoto, construirValores } from '../utils/registros';
+import { IconCheck, IconFolder } from '../components/icons';
 
 export function Step5UploadPhotos() {
   const { state, dispatch, fotos, setFotos } = useWizard();
@@ -96,7 +97,9 @@ export function Step5UploadPhotos() {
             e.target.value = '';
           }}
         />
-        <p className="dropzone__icono">🗂️</p>
+        <p className="dropzone__icono">
+          <IconFolder />
+        </p>
         <p>
           <strong>Haz clic para elegir un ZIP</strong> o arrástralo aquí
         </p>
@@ -120,7 +123,8 @@ export function Step5UploadPhotos() {
       {fotos.size > 0 && stats && (
         <div className="resultado-archivo">
           <p>
-            ✓ <strong>{state.nombreArchivoFotos}</strong> — {fotos.size} foto(s) extraídas.
+            <IconCheck size={13} className="mensaje-ok" /> <strong>{state.nombreArchivoFotos}</strong> —{' '}
+            {fotos.size} foto(s) extraídas.
           </p>
           <p className={stats.encontradas === stats.total ? 'mensaje-ok' : 'mensaje-alerta'}>
             {stats.encontradas} de {stats.total} estudiante(s) tienen foto emparejada.
