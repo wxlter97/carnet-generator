@@ -14,7 +14,7 @@ const plantilla: PlantillaDefinicion = {
       label: 'Centro Escolar',
       requerido: true,
       tipo: 'texto',
-      placeholder: 'Centro Escolar Cantón Shucutitán',
+      placeholder: 'Centro Escolar Cantón Shucutitan',
     },
   ],
   camposRegistro: [

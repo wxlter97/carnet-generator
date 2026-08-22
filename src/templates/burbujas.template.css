@@ -84,7 +84,7 @@
   background: linear-gradient(135deg, #ff8a65, #ffab40);
   color: #12233a;
   font-weight: 800;
-  font-size: 6.6px;
+  font-size: 14px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   box-shadow: 0 0.3mm 0.8mm rgba(0, 0, 0, 0.15);
@@ -92,7 +92,7 @@
 }
 
 .tpl-burbujas__nombre {
-  font-size: 10.5px;
+  font-size: 24px;
   font-weight: 800;
   color: #1c2733;
   text-align: center;
@@ -116,9 +116,9 @@
   z-index: 1;
   text-align: center;
   padding: 0 4mm 2.4mm;
-  font-size: 6.2px;
+  font-size: 12px;
   font-weight: 800;
-  color: #00897b;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   white-space: nowrap;
