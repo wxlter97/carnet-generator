@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header no-imprimir">
-        <h1>🪪 Generador de carnets escolares</h1>
+        <h1>🪪 Generador de Carnets</h1>
         <button type="button" className="boton-texto" onClick={() => {
           if (confirm('Esto borra la plantilla elegida, los datos cargados y las fotos. ¿Continuar?')) {
             reiniciarTodo();
