@@ -14,14 +14,15 @@ export function Step5UploadPhotos() {
   const [progreso, setProgreso] = useState<{ hecho: number; total: number } | null>(null);
 
   const stats = useMemo(() => {
-    if (!plantilla) return null;
+    if (!plantilla || !plantilla.campoFoto) return null;
+    const campoFoto = plantilla.campoFoto;
     let encontradas = 0;
     const faltantes: string[] = [];
     for (const fila of state.filas) {
       const valores = construirValores(fila, plantilla, state.mapeoColumnas);
       const foto = buscarFoto(valores, plantilla, fotos);
       if (foto) encontradas += 1;
-      else faltantes.push(valores[plantilla.campoFoto] || '(sin valor)');
+      else faltantes.push(valores[campoFoto] || '(sin valor)');
     }
     return { encontradas, total: state.filas.length, faltantes };
   }, [plantilla, state.filas, state.mapeoColumnas, fotos]);
@@ -47,6 +48,18 @@ export function Step5UploadPhotos() {
   }
 
   if (!plantilla) return null;
+
+  if (!plantilla.campoFoto) {
+    return (
+      <section>
+        <h2>5. Fotos</h2>
+        <p className="paso-descripcion">
+          La plantilla <b>{plantilla.nombre}</b> no usa foto de estudiante — puedes continuar
+          directo a la vista previa.
+        </p>
+      </section>
+    );
+  }
 
   return (
     <section>

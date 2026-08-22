@@ -25,6 +25,7 @@ export function construirValores(
 /** Busca la foto de un registro en el mapa extraído del ZIP, usando el
  * campo que la plantilla designó como llave de emparejamiento. */
 export function buscarFoto(valores: ValoresRegistro, plantilla: PlantillaDefinicion, fotos: MapaFotos) {
+  if (!plantilla.campoFoto) return undefined; // la plantilla no usa foto de estudiante
   const valorClave = valores[plantilla.campoFoto];
   if (!valorClave) return undefined;
   return fotos.get(slugify(valorClave));

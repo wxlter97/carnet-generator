@@ -34,8 +34,9 @@ export interface PlantillaDefinicion {
   id: string;
   nombre: string;
   descripcion: string;
-  /** Campo de camposRegistro cuyo valor (slugificado) debe coincidir con el nombre de archivo de la foto en el ZIP. */
-  campoFoto: string;
+  /** Campo de camposRegistro cuyo valor (slugificado) debe coincidir con el nombre de archivo de
+   * la foto en el ZIP. `null` si la plantilla no usa foto de estudiante (el paso 5 se omite). */
+  campoFoto: string | null;
   camposFijos: CampoFijo[];
   camposRegistro: CampoRegistro[];
   /** Colores/acento usado en la miniatura del selector de plantillas. */

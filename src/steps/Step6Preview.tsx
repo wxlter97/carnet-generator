@@ -35,10 +35,12 @@ export function Step6Preview() {
         <div>
           <h2>6. Vista previa e impresión</h2>
           <p className="paso-descripcion">
-            {registros.length} carnet(s) — {conFoto} con foto, {registros.length - conFoto} con
-            silueta de respaldo. Tamaño real: 85.6 × 54&nbsp;mm (CR80).
+            {registros.length} carnet(s)
+            {plantilla.campoFoto &&
+              ` — ${conFoto} con foto, ${registros.length - conFoto} con silueta de respaldo`}
+            . Tamaño real: 85.6 × 54&nbsp;mm (CR80).
           </p>
-          {conFoto === 0 && state.nombreArchivoFotos && (
+          {plantilla.campoFoto && conFoto === 0 && state.nombreArchivoFotos && (
             <p className="mensaje-alerta">
               ⚠️ Las fotos de <strong>{state.nombreArchivoFotos}</strong> no se conservaron tras
               recargar la página.{' '}

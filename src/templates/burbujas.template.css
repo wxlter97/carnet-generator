@@ -1,0 +1,127 @@
+.tpl-burbujas {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.tpl-burbujas__burbuja {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.tpl-burbujas__b1 {
+  width: 30mm;
+  height: 30mm;
+  top: -9mm;
+  left: -7mm;
+  background: #ffccbc;
+}
+
+.tpl-burbujas__b2 {
+  width: 20mm;
+  height: 20mm;
+  top: -8mm;
+  right: 8mm;
+  background: #bbdefb;
+}
+
+.tpl-burbujas__b3 {
+  width: 32mm;
+  height: 32mm;
+  top: 6mm;
+  left: 24mm;
+  background: #c8e6c9;
+  opacity: 0.8;
+}
+
+.tpl-burbujas__b4 {
+  width: 24mm;
+  height: 24mm;
+  bottom: -9mm;
+  left: -7mm;
+  background: #d1c4e9;
+}
+
+.tpl-burbujas__b5 {
+  width: 16mm;
+  height: 16mm;
+  bottom: -5mm;
+  right: 16mm;
+  background: #f8bbd0;
+}
+
+.tpl-burbujas__b6 {
+  width: 18mm;
+  height: 18mm;
+  bottom: 1mm;
+  right: -6mm;
+  background: #b2ebf2;
+}
+
+.tpl-burbujas__cuerpo {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tpl-burbujas__centro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4mm;
+  padding: 2mm 4mm 0;
+  min-height: 0;
+}
+
+.tpl-burbujas__pill {
+  padding: 0.6mm 3mm;
+  border-radius: 4mm;
+  background: linear-gradient(135deg, #ff8a65, #ffab40);
+  color: #12233a;
+  font-weight: 800;
+  font-size: 6.6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  box-shadow: 0 0.3mm 0.8mm rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.tpl-burbujas__nombre {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #1c2733;
+  text-align: center;
+  line-height: 1.18;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  text-shadow:
+    -0.5px -0.5px 0 #fff8e1,
+    0.5px -0.5px 0 #fff8e1,
+    -0.5px 0.5px 0 #fff8e1,
+    0.5px 0.5px 0 #fff8e1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tpl-burbujas__footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 4mm 2.4mm;
+  font-size: 6.2px;
+  font-weight: 800;
+  color: #00897b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
