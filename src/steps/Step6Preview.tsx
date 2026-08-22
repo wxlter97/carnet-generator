@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useWizard } from '../state/WizardContext';
 import { getPlantilla } from '../templates';
 import { buscarFoto, construirValores } from '../utils/registros';
+import { IconMinus, IconPlus, IconPrinter } from '../components/icons';
 
 const ZOOM_MIN = 0.6;
 const ZOOM_MAX = 1.6;
@@ -53,15 +54,15 @@ export function Step6Preview() {
         <div className="preview-toolbar__acciones">
           <div className="zoom-control">
             <button type="button" onClick={() => cambiarZoom(-ZOOM_PASO)} aria-label="Alejar">
-              −
+              <IconMinus />
             </button>
             <span>{Math.round(state.zoomPreview * 100)}%</span>
             <button type="button" onClick={() => cambiarZoom(ZOOM_PASO)} aria-label="Acercar">
-              +
+              <IconPlus />
             </button>
           </div>
           <button type="button" className="boton-primario" onClick={() => window.print()}>
-            🖨️ Imprimir
+            <IconPrinter size={17} /> Imprimir
           </button>
         </div>
       </div>

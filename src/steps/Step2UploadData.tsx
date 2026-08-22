@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useWizard } from '../state/WizardContext';
 import { parseDataFile } from '../utils/parseFile';
+import { IconCheck, IconDocument } from '../components/icons';
 
 export function Step2UploadData() {
   const { state, dispatch } = useWizard();
@@ -56,7 +57,9 @@ export function Step2UploadData() {
             e.target.value = '';
           }}
         />
-        <p className="dropzone__icono">📄</p>
+        <p className="dropzone__icono">
+          <IconDocument />
+        </p>
         <p>
           <strong>Haz clic para elegir un archivo</strong> o arrástralo aquí
         </p>
@@ -69,8 +72,8 @@ export function Step2UploadData() {
       {state.nombreArchivoDatos && !cargando && (
         <div className="resultado-archivo">
           <p>
-            ✓ <strong>{state.nombreArchivoDatos}</strong> — {state.filas.length} fila(s),{' '}
-            {state.encabezados.length} columna(s) detectadas.
+            <IconCheck size={13} className="mensaje-ok" /> <strong>{state.nombreArchivoDatos}</strong> —{' '}
+            {state.filas.length} fila(s), {state.encabezados.length} columna(s) detectadas.
           </p>
           <div className="tabla-scroll">
             <table className="tabla-preview">

@@ -1,3 +1,5 @@
+import { IconCheck } from './icons';
+
 interface StepperProps {
   pasoActual: number;
   maxPasoHabilitado: number;
@@ -29,7 +31,9 @@ export function Stepper({ pasoActual, maxPasoHabilitado, onIrAPaso }: StepperPro
               disabled={!habilitado}
               onClick={() => onIrAPaso(numero)}
             >
-              <span className="stepper__numero">{numero}</span>
+              <span className="stepper__numero">
+                {estado === 'completo' ? <IconCheck size={11} /> : numero}
+              </span>
               <span className="stepper__label">{label}</span>
             </button>
           </li>

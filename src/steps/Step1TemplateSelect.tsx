@@ -1,6 +1,7 @@
 import { plantillas } from '../templates';
 import type { PlantillaDefinicion } from '../types';
 import { useWizard } from '../state/WizardContext';
+import { IconCheck } from '../components/icons';
 
 /** Genera valores de ejemplo para poder mostrar una miniatura real de la
  * plantilla (no un mockup aparte) en el selector. */
@@ -59,7 +60,11 @@ export function Step1TemplateSelect() {
                   <div className="plantilla-card__desc">{plantilla.descripcion}</div>
                 </div>
               </div>
-              {seleccionada && <span className="plantilla-card__check">✓ Seleccionada</span>}
+              {seleccionada && (
+                <span className="plantilla-card__check">
+                  <IconCheck size={11} /> Seleccionada
+                </span>
+              )}
             </button>
           );
         })}
