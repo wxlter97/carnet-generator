@@ -1,47 +1,13 @@
-/* Tokens al estilo Apple HIG: colores semánticos (con variante oscura vía
-   prefers-color-scheme), tipografía del sistema (SF Pro / -apple-system) y
-   radios/paddings sobre una grilla de 4-8pt. */
-:root {
-  --color-bg: #f2f2f7; /* systemGroupedBackground */
-  --color-superficie: #ffffff; /* systemBackground */
-  --color-superficie-input: #eeeef1; /* campo "well" */
-  --color-texto: #1c1c1e; /* label */
-  --color-texto-suave: #6e6e73; /* secondaryLabel */
-  --color-texto-terciario: #8e8e93; /* tertiaryLabel */
-  --color-borde: rgba(60, 60, 67, 0.29); /* separator */
-  --color-primario: #007aff; /* systemBlue */
-  --color-primario-tinte: rgba(0, 122, 255, 0.12);
-  --color-primario-oscuro: #0059c8;
-  --color-error: #ff3b30; /* systemRed */
-  --color-ok: #34c759; /* systemGreen */
-  --color-alerta: #ff9500; /* systemOrange */
-  --radio-card: 18px;
-  --radio-control: 12px;
-  --radio-pill: 980px;
-  --sombra-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
-  --sombra-flotante: 0 2px 10px rgba(0, 0, 0, 0.14);
-  color-scheme: light;
-}
+/* Tokens now come from @wxlter.dev/tokens, pulled in via the
+   @wxlter.dev/ui-css import in main.tsx — see the design-system repo
+   (wxlter97/design-system). This file keeps carnet-generator's own
+   component classes (buttons, stepper, cards, dropzone, etc.), now
+   pointed at the shared canonical (English) custom property names
+   instead of duplicating its own token definitions.
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #000000;
-    --color-superficie: #1c1c1e;
-    --color-superficie-input: #2c2c2e;
-    --color-texto: #f5f5f7;
-    --color-texto-suave: #98989d;
-    --color-texto-terciario: #8e8e93;
-    --color-borde: rgba(84, 84, 88, 0.6);
-    --color-primario: #0a84ff;
-    --color-primario-tinte: rgba(10, 132, 255, 0.18);
-    --color-primario-oscuro: #6cb1ff;
-    --color-error: #ff453a;
-    --color-ok: #30d158;
-    --color-alerta: #ff9f0a;
-    --sombra-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.45);
-    color-scheme: dark;
-  }
-}
+   Component-level adoption of @wxlter.dev/ui-react (swapping these
+   classes for shared <Button>/<Card>/etc.) is a deliberate follow-up,
+   not done here, to keep this pass a zero-visual-diff token swap. */
 
 * {
   box-sizing: border-box;
@@ -55,7 +21,7 @@ svg {
 body {
   margin: 0;
   background: var(--color-bg);
-  color: var(--color-texto);
+  color: var(--color-label);
   font-family:
     -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Helvetica Neue',
     Arial, sans-serif;
@@ -88,7 +54,7 @@ body {
 }
 
 .app-header__titulo svg {
-  color: var(--color-primario);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -102,7 +68,7 @@ body {
 .boton-texto {
   background: none;
   border: none;
-  color: var(--color-primario);
+  color: var(--color-accent);
   cursor: pointer;
   font-size: 15px;
   font-weight: 590;
@@ -126,7 +92,7 @@ body {
   gap: 2px;
   padding: 4px;
   margin: 0;
-  background: var(--color-superficie-input);
+  background: var(--color-surface-input);
   border-radius: 14px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -153,7 +119,7 @@ body {
   background: transparent;
   cursor: pointer;
   text-align: center;
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -170,13 +136,13 @@ body {
   height: 20px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--color-borde);
+  background: var(--color-separator);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   font-weight: 700;
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
 }
 
 .stepper__label {
@@ -186,26 +152,26 @@ body {
 }
 
 .stepper__item--actual .stepper__boton {
-  background: var(--color-superficie);
-  color: var(--color-texto);
-  box-shadow: var(--sombra-flotante);
+  background: var(--color-surface);
+  color: var(--color-label);
+  box-shadow: var(--shadow-floating);
 }
 
 .stepper__item--actual .stepper__numero {
-  background: var(--color-primario);
+  background: var(--color-accent);
   color: #fff;
 }
 
 .stepper__item--completo .stepper__numero {
-  background: var(--color-ok);
+  background: var(--color-success);
   color: #fff;
 }
 
 /* ---------- Contenido de cada paso ---------- */
 .app-main {
-  background: var(--color-superficie);
-  border-radius: var(--radio-card);
-  box-shadow: var(--sombra-card);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
   padding: 28px 28px 32px;
   flex: 1;
 }
@@ -218,29 +184,29 @@ body {
 }
 
 .paso-descripcion {
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
   max-width: 70ch;
   font-size: 15px;
 }
 
 .requerido {
-  color: var(--color-error);
+  color: var(--color-destructive);
 }
 
 .mensaje-error {
-  color: var(--color-error);
+  color: var(--color-destructive);
   font-weight: 590;
   font-size: 14.5px;
 }
 
 .mensaje-ok {
-  color: var(--color-ok);
+  color: var(--color-success);
   font-weight: 590;
   font-size: 14.5px;
 }
 
 .mensaje-alerta {
-  color: var(--color-alerta);
+  color: var(--color-warning);
   font-weight: 590;
   font-size: 14.5px;
 }
@@ -258,7 +224,7 @@ body {
   justify-content: center;
   gap: 6px;
   padding: 12px 24px;
-  border-radius: var(--radio-pill);
+  border-radius: var(--radius-pill);
   font-weight: 590;
   font-size: 16px;
   cursor: pointer;
@@ -275,7 +241,7 @@ body {
 }
 
 .boton-primario {
-  background: var(--color-primario);
+  background: var(--color-accent);
   color: #fff;
 }
 
@@ -286,8 +252,8 @@ body {
 }
 
 .boton-secundario {
-  background: var(--color-primario-tinte);
-  color: var(--color-primario);
+  background: var(--color-accent-tint);
+  color: var(--color-accent);
 }
 
 .boton-secundario:disabled {
@@ -306,9 +272,9 @@ body {
 .plantilla-card {
   width: 240px;
   border: none;
-  border-radius: var(--radio-card);
-  background: var(--color-superficie);
-  box-shadow: var(--sombra-card);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
   padding: 14px;
   cursor: pointer;
   text-align: left;
@@ -327,8 +293,8 @@ body {
 
 .plantilla-card--activa {
   box-shadow:
-    0 0 0 2.5px var(--color-primario),
-    var(--sombra-card);
+    0 0 0 2.5px var(--color-accent),
+    var(--shadow-card);
 }
 
 /* 212px = 240px de tarjeta - 2*14px de padding. La plantilla real mide
@@ -337,7 +303,7 @@ body {
 .plantilla-miniatura {
   width: 212px;
   aspect-ratio: 85.6 / 54;
-  background: var(--color-superficie-input);
+  background: var(--color-surface-input);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -372,7 +338,7 @@ body {
 
 .plantilla-card__desc {
   font-size: 13px;
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
 }
 
 .plantilla-card__check {
@@ -380,43 +346,43 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--color-primario);
+  background: var(--color-accent);
   color: #fff;
   font-size: 12px;
   font-weight: 600;
   padding: 3px 10px;
-  border-radius: var(--radio-pill);
+  border-radius: var(--radius-pill);
 }
 
 /* ---------- Dropzone ---------- */
 .dropzone {
-  border: 1.5px dashed var(--color-borde);
-  border-radius: var(--radio-card);
+  border: 1.5px dashed var(--color-separator);
+  border-radius: var(--radius-card);
   padding: 36px 24px;
   text-align: center;
   cursor: pointer;
-  color: var(--color-texto-suave);
-  background: var(--color-superficie-input);
+  color: var(--color-label-secondary);
+  background: var(--color-surface-input);
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease;
 }
 
 .dropzone--activa {
-  border-color: var(--color-primario);
-  background: var(--color-primario-tinte);
+  border-color: var(--color-accent);
+  background: var(--color-accent-tint);
 }
 
 .dropzone__icono {
   margin: 0 0 4px;
-  color: var(--color-primario);
+  color: var(--color-accent);
   display: flex;
   justify-content: center;
 }
 
 .dropzone__hint {
   font-size: 13px;
-  color: var(--color-texto-terciario);
+  color: var(--color-label-tertiary);
 }
 
 .resultado-archivo {
@@ -426,7 +392,7 @@ body {
 .tabla-scroll {
   overflow-x: auto;
   border-radius: 12px;
-  border: 1px solid var(--color-borde);
+  border: 1px solid var(--color-separator);
 }
 
 .tabla-preview {
@@ -439,14 +405,14 @@ body {
 .tabla-preview th,
 .tabla-preview td {
   padding: 8px 12px;
-  border-bottom: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-separator);
   text-align: left;
 }
 
 .tabla-preview th {
-  background: var(--color-superficie-input);
+  background: var(--color-surface-input);
   font-weight: 590;
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -458,7 +424,7 @@ body {
 
 .tabla-preview__nota {
   font-size: 13px;
-  color: var(--color-texto-terciario);
+  color: var(--color-label-tertiary);
 }
 
 /* ---------- Paso 3: mapeo ---------- */
@@ -486,19 +452,19 @@ body {
 .mapeo-fila__tag {
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--color-primario);
-  background: var(--color-primario-tinte);
+  color: var(--color-accent);
+  background: var(--color-accent-tint);
   padding: 2px 8px;
-  border-radius: var(--radio-pill);
+  border-radius: var(--radius-pill);
 }
 
 .mapeo-fila__select {
   padding: 11px 12px;
-  border-radius: var(--radio-control);
+  border-radius: var(--radius-control);
   border: 1px solid transparent;
-  background: var(--color-superficie-input);
+  background: var(--color-surface-input);
   font-size: 15px;
-  color: var(--color-texto);
+  color: var(--color-label);
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -510,12 +476,12 @@ body {
 
 .mapeo-fila__select:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primario-tinte);
-  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px var(--color-accent-tint);
+  border-color: var(--color-accent);
 }
 
 .mapeo-fila__select--error {
-  box-shadow: 0 0 0 1.5px var(--color-error);
+  box-shadow: 0 0 0 1.5px var(--color-destructive);
 }
 
 /* ---------- Paso 4: campos fijos ---------- */
@@ -536,23 +502,23 @@ body {
 
 .form-fijos__campo input {
   padding: 11px 12px;
-  border-radius: var(--radio-control);
+  border-radius: var(--radius-control);
   border: 1px solid transparent;
-  background: var(--color-superficie-input);
+  background: var(--color-surface-input);
   font-size: 16px;
   font-weight: 400;
-  color: var(--color-texto);
+  color: var(--color-label);
   transition: box-shadow 0.15s ease;
 }
 
 .form-fijos__campo input:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primario-tinte);
-  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px var(--color-accent-tint);
+  border-color: var(--color-accent);
 }
 
 .form-fijos__campo input::placeholder {
-  color: var(--color-texto-terciario);
+  color: var(--color-label-tertiary);
 }
 
 /* ---------- Paso 5: fotos ---------- */
@@ -582,8 +548,8 @@ body {
 .zoom-control {
   display: flex;
   align-items: center;
-  background: var(--color-superficie-input);
-  border-radius: var(--radio-pill);
+  background: var(--color-surface-input);
+  border-radius: var(--radius-pill);
   overflow: hidden;
 }
 
@@ -596,7 +562,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primario);
+  color: var(--color-accent);
   transition: background-color 0.15s ease;
 }
 
@@ -613,7 +579,7 @@ body {
   font-weight: 590;
   min-width: 3.5em;
   text-align: center;
-  color: var(--color-texto-suave);
+  color: var(--color-label-secondary);
 }
 
 .print-grid {
