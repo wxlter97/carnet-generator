@@ -1,0 +1,75 @@
+/* wxlter. brand — local override of @wxlter.dev/tokens' custom properties.
+   This redefines the *values* of the shared token names carnet-generator's
+   own CSS already consumes (--color-*, --radius-*, --shadow-*, --font-system)
+   without touching the published @wxlter.dev/* package or its other
+   consumers (pomotion). Loaded right after the package import in main.tsx,
+   so it wins the cascade.
+
+   Same palette/typography as the rest of the wxlter.dev ecosystem
+   (wxlter-website, gh-pages-dashboard, money-calc, qrcode.js): brutalist,
+   single light theme — paper/ink/brand-faro, hard 2px borders, radius 0,
+   no shadows, instant color-invert hover.
+
+   Requires <html data-theme="light"> (set in index.html): the tokens
+   package's own dark theme applies via `:root:not([data-theme="light"])`
+   under prefers-color-scheme, which outranks a plain `:root` override on
+   specificity alone — the attribute is the package's own documented way
+   to opt a consumer out of it. */
+
+:root {
+  color-scheme: light;
+
+  --brand-faro: #ffdb00;
+  --ink: #111111;
+  --paper: #f4f3ef;
+  --smoke: #6b6b63;
+  --ash: #c9c9c2;
+  --ink-soft: #3d3d38;
+  --danger: #d92b0c;
+  --success: #0b7a45;
+
+  --rule: 2px solid var(--ink);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-system: 'Archivo', -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo Black', 'Archivo', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+
+  /* Shape: no rounding anywhere. */
+  --radius-control: 0;
+  --radius-card: 0;
+  --radius-pill: 0;
+
+  /* No shadows. */
+  --shadow-card: none;
+  --shadow-elevated: none;
+  --shadow-floating: none;
+
+  /* Semantic colors, resolved against the brand palette. */
+  --color-bg: var(--paper);
+  --color-surface: var(--paper);
+  --color-surface-input: var(--paper);
+  --color-fill: var(--ash);
+  --color-fill-strong: var(--ash);
+
+  --color-label: var(--ink);
+  --color-label-secondary: var(--ink-soft);
+  --color-label-tertiary: var(--smoke);
+  --color-separator: var(--ash);
+
+  --color-accent: var(--ink);
+  --color-accent-active: var(--brand-faro);
+  --color-accent-tint: var(--paper);
+  --color-accent-contrast: var(--brand-faro);
+
+  --color-destructive: var(--danger);
+  --color-success: var(--success);
+  --color-warning: #a15c00;
+  --color-warning-bg: var(--paper);
+  --color-warning-fg: #a15c00;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-faro);
+  outline-offset: 0;
+}
