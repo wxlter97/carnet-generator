@@ -12,6 +12,7 @@ import { Step6Preview } from './steps/Step6Preview';
 import { pasoValido } from './state/validacion';
 
 const TOTAL_PASOS = 6;
+const PORTFOLIO_HOME_URL = 'https://home.wxlter.dev/';
 
 function App() {
   const { state, dispatch, reiniciarTodo } = useWizard();
@@ -36,10 +37,10 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header no-imprimir">
-        <div className="app-header__titulo">
+        <a className="app-header__titulo" href={PORTFOLIO_HOME_URL} title="Volver al inicio del portafolio">
           <IconBadge size={24} />
           <h1>Generador de Carnets</h1>
-        </div>
+        </a>
         <button type="button" className="boton-texto" onClick={() => {
           if (confirm('Esto borra la plantilla elegida, los datos cargados y las fotos. ¿Continuar?')) {
             reiniciarTodo();
