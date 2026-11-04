@@ -1,6 +1,8 @@
 import type { PlantillaDefinicion } from '../types';
 import './diploma-fiesta.template.css';
 
+const ilustracion = (nombre: string) => `${import.meta.env.BASE_URL}illustrations/${nombre}`;
+
 const camposFijos = [
   { key: 'nombreInstitucion', label: 'Nombre de la institución', requerido: true, tipo: 'texto' as const, placeholder: 'Centro Escolar Ejemplo', valorPorDefecto: 'Centro Escolar' },
   { key: 'encabezado', label: 'Texto superior', requerido: true, tipo: 'texto' as const, placeholder: 'Otorga el presente', valorPorDefecto: 'Otorga el presente' },
@@ -27,11 +29,11 @@ const plantilla: PlantillaDefinicion = {
   Render({ valores, fijos }) {
     return (
       <article className="documento-base documento-carta tpl-diploma-fiesta">
-        <img className="tpl-diploma-fiesta__arcoiris" src="/illustrations/openmoji-rainbow.svg" alt="" />
-        <img className="tpl-diploma-fiesta__estrella" src="/illustrations/openmoji-star.svg" alt="" />
-        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--one" src="/illustrations/openmoji-balloon.svg" alt="" />
-        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--two" src="/illustrations/openmoji-balloon.svg" alt="" />
-        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--three" src="/illustrations/openmoji-balloon.svg" alt="" />
+        <img className="tpl-diploma-fiesta__arcoiris" src={ilustracion('openmoji-rainbow.svg')} alt="" />
+        <img className="tpl-diploma-fiesta__estrella" src={ilustracion('openmoji-star.svg')} alt="" />
+        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--one" src={ilustracion('openmoji-balloon.svg')} alt="" />
+        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--two" src={ilustracion('openmoji-balloon.svg')} alt="" />
+        <img className="tpl-diploma-fiesta__globo tpl-diploma-fiesta__globo--three" src={ilustracion('openmoji-balloon.svg')} alt="" />
         <div className="tpl-diploma-fiesta__confeti" aria-hidden="true">
           <i /><i /><i /><i /><i /><i /><i /><i />
         </div>
