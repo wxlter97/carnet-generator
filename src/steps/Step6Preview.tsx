@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useWizard } from '../state/WizardContext';
 import { getPlantilla } from '../templates';
 import { buscarFoto, construirValores } from '../utils/registros';
+import { obtenerValoresFijos } from '../utils/fijos';
 import { IconMinus, IconPlus, IconPrinter } from '../components/icons';
 
 const ZOOM_MIN = 0.6;
@@ -22,6 +23,7 @@ export function Step6Preview() {
   }, [plantilla, state.filas, state.mapeoColumnas, fotos]);
 
   if (!plantilla) return null;
+  const valoresFijos = obtenerValoresFijos(plantilla, state.valoresFijos);
 
   const conFoto = registros.filter((r) => r.fotoUrl).length;
 
@@ -36,10 +38,10 @@ export function Step6Preview() {
         <div>
           <h2>6. Vista previa e impresión</h2>
           <p className="paso-descripcion">
-            {registros.length} carnet(s)
+            {registros.length} documento(s)
             {plantilla.campoFoto &&
               ` — ${conFoto} con foto, ${registros.length - conFoto} con silueta de respaldo`}
-            . Tamaño real: 85.6 × 54&nbsp;mm (CR80).
+            . Tamaño real: {plantilla.formato === 'carta' ? 'carta (8.5 × 11 pulgadas)' : '85.6 × 54 mm (CR80)'}.
           </p>
           {plantilla.campoFoto && conFoto === 0 && state.nombreArchivoFotos && (
             <p className="mensaje-alerta">
@@ -69,11 +71,11 @@ export function Step6Preview() {
 
       <div className="vista-impresion">
         <div
-          className="print-grid"
+          className={`print-grid print-grid--${plantilla.formato}`}
           style={{ zoom: state.zoomPreview } as React.CSSProperties}
         >
           {registros.map((r) => (
-            <plantilla.Render key={r.id} valores={r.valores} fijos={state.valoresFijos} fotoUrl={r.fotoUrl} />
+            <plantilla.Render key={r.id} valores={r.valores} fijos={valoresFijos} fotoUrl={r.fotoUrl} />
           ))}
         </div>
       </div>

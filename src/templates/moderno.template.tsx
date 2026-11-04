@@ -7,11 +7,12 @@ const plantilla: PlantillaDefinicion = {
   id: 'moderno',
   nombre: 'Moderno Vibrante',
   descripcion: 'Gradiente de color, foto circular y acentos redondeados. Ideal para primaria.',
+  formato: 'carnet',
   colorAcento: '#6c5ce7',
   campoFoto: 'nombreCompleto',
   camposFijos: [
-    { key: 'centroEscolar', label: 'Centro Escolar', requerido: true, tipo: 'texto', placeholder: 'Escuela Estrellitas' },
-    { key: 'anioLectivo', label: 'Año Lectivo', requerido: true, tipo: 'texto', placeholder: '2026' },
+    { key: 'centroEscolar', label: 'Centro Escolar', requerido: true, tipo: 'texto', placeholder: 'Escuela Estrellitas', valorPorDefecto: 'Centro Escolar' },
+    { key: 'anioLectivo', label: 'Año Lectivo', requerido: true, tipo: 'texto', placeholder: '2026', valorPorDefecto: '2026' },
     { key: 'lema', label: 'Lema (opcional)', requerido: false, tipo: 'texto', placeholder: '¡Aprender jugando!' },
   ],
   camposRegistro: [

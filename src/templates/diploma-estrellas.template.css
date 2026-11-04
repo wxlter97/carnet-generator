@@ -1,0 +1,114 @@
+.tpl-diploma-estrellas {
+  background: #fff;
+  border: 1.2mm solid #7c67b5;
+  color: #443767;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.tpl-diploma-estrellas::before,
+.tpl-diploma-estrellas::after {
+  content: '';
+  position: absolute;
+  width: 28mm;
+  height: 28mm;
+  border: 0.6mm solid #f1bd62;
+  border-radius: 50%;
+}
+
+.tpl-diploma-estrellas::before { top: -19mm; left: -13mm; }
+.tpl-diploma-estrellas::after { right: -13mm; bottom: -19mm; border-color: #80c4b8; }
+
+.tpl-diploma-estrellas__contenido {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 22mm 30mm 14mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tpl-diploma-estrellas__constelacion {
+  position: absolute;
+  top: 13mm;
+  right: 25mm;
+  color: #f1bd62;
+  font-size: 18pt;
+  letter-spacing: 3px;
+}
+
+.tpl-diploma-estrellas__institucion {
+  max-width: 100%;
+  color: #7c67b5;
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-estrellas__encabezado {
+  margin-top: 10mm;
+  color: #74838e;
+  font-size: 13pt;
+}
+
+.tpl-diploma-estrellas h1 {
+  margin: 5mm 0 8mm;
+  color: #e37c91;
+  font-family: Georgia, serif;
+  font-size: 27pt;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tpl-diploma-estrellas__a {
+  color: #74838e;
+  font-size: 14pt;
+}
+
+.tpl-diploma-estrellas__nombre {
+  margin: 4mm 0 2mm;
+  color: #443767;
+  font-family: Georgia, serif;
+  font-size: 28pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpl-diploma-estrellas__grado {
+  padding: 1.5mm 5mm;
+  border: 0.4mm solid #80c4b8;
+  border-radius: 20mm;
+  color: #4c968c;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tpl-diploma-estrellas p {
+  max-width: 145mm;
+  margin: 9mm 0 auto;
+  color: #657783;
+  font-family: Georgia, serif;
+  font-size: 13pt;
+  line-height: 1.35;
+}
+
+.tpl-diploma-estrellas__pie {
+  margin-top: 6mm;
+  color: #74838e;
+  font-size: 10pt;
+}
+
+.tpl-diploma-estrellas__firma {
+  min-width: 64mm;
+  margin-top: 8mm;
+  padding-top: 2mm;
+  border-top: 0.35mm solid #443767;
+  display: flex;
+  flex-direction: column;
+  font-size: 9pt;
+}
+
+.tpl-diploma-estrellas__firma span:first-child { font-weight: 800; }

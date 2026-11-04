@@ -10,6 +10,7 @@ export interface CampoFijo {
   requerido: boolean;
   tipo: TipoCampo;
   placeholder?: string;
+  valorPorDefecto?: string;
 }
 
 /** Un campo que viene del CSV/Excel, uno por estudiante/carnet. */
@@ -34,6 +35,7 @@ export interface PlantillaDefinicion {
   id: string;
   nombre: string;
   descripcion: string;
+  formato: 'carnet' | 'carta';
   /** Campo de camposRegistro cuyo valor (slugificado) debe coincidir con el nombre de archivo de
    * la foto en el ZIP. `null` si la plantilla no usa foto de estudiante (el paso 5 se omite). */
   campoFoto: string | null;

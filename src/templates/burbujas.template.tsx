@@ -6,6 +6,7 @@ const plantilla: PlantillaDefinicion = {
   id: 'burbujas',
   nombre: 'Burbujas de Colores',
   descripcion: 'Fondo de burbujas pastel, sin foto. Ideal para parvularia/preescolar.',
+  formato: 'carnet',
   colorAcento: '#ff8a65',
   campoFoto: null, // esta plantilla no usa foto de estudiante
   camposFijos: [
@@ -15,6 +16,7 @@ const plantilla: PlantillaDefinicion = {
       requerido: true,
       tipo: 'texto',
       placeholder: 'Centro Escolar Cantón Shucutitan',
+      valorPorDefecto: 'Centro Escolar',
     },
   ],
   camposRegistro: [

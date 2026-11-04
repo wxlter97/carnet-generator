@@ -1,4 +1,5 @@
 import type { PlantillaDefinicion, WizardState } from '../types';
+import { obtenerValoresFijos } from '../utils/fijos';
 
 export function paso1Valido(state: WizardState): boolean {
   return state.plantillaId !== null;
@@ -17,9 +18,10 @@ export function paso3Valido(state: WizardState, plantilla: PlantillaDefinicion |
 
 export function paso4Valido(state: WizardState, plantilla: PlantillaDefinicion | undefined): boolean {
   if (!plantilla) return false;
+  const valores = obtenerValoresFijos(plantilla, state.valoresFijos);
   return plantilla.camposFijos
     .filter((c) => c.requerido)
-    .every((c) => (state.valoresFijos[c.key] ?? '').trim() !== '');
+    .every((c) => (valores[c.key] ?? '').trim() !== '');
 }
 
 /** paso5 (fotos) es siempre "válido" para avanzar: las fotos son opcionales,

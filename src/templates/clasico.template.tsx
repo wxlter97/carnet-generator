@@ -7,12 +7,13 @@ const plantilla: PlantillaDefinicion = {
   id: 'clasico',
   nombre: 'Clásico Institucional',
   descripcion: 'Banda azul y oro, escudo y foto enmarcada. Ideal para uso formal.',
+  formato: 'carnet',
   colorAcento: '#0e4d7a',
   campoFoto: 'nombreCompleto',
   camposFijos: [
-    { key: 'centroEscolar', label: 'Centro Escolar', requerido: true, tipo: 'texto', placeholder: 'Complejo Educativo San José' },
+    { key: 'centroEscolar', label: 'Centro Escolar', requerido: true, tipo: 'texto', placeholder: 'Complejo Educativo San José', valorPorDefecto: 'Centro Escolar' },
     { key: 'direccion', label: 'Dirección (opcional)', requerido: false, tipo: 'texto', placeholder: 'Calle Principal, San Salvador' },
-    { key: 'anioLectivo', label: 'Año Lectivo', requerido: true, tipo: 'texto', placeholder: '2026' },
+    { key: 'anioLectivo', label: 'Año Lectivo', requerido: true, tipo: 'texto', placeholder: '2026', valorPorDefecto: '2026' },
   ],
   camposRegistro: [
     { key: 'nombreCompleto', label: 'Nombre completo', requerido: true, tipo: 'texto' },

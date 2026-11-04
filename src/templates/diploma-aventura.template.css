@@ -1,0 +1,149 @@
+.tpl-diploma-aventura {
+  background: #fff;
+  border: 0.6mm solid #23466f;
+  color: #23466f;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.tpl-diploma-aventura::before,
+.tpl-diploma-aventura::after {
+  content: '';
+  position: absolute;
+  border: 0.5mm solid #f0a83b;
+  border-radius: 50%;
+}
+
+.tpl-diploma-aventura::before {
+  width: 52mm;
+  height: 52mm;
+  top: -34mm;
+  right: -25mm;
+}
+
+.tpl-diploma-aventura::after {
+  width: 28mm;
+  height: 28mm;
+  bottom: -19mm;
+  left: -13mm;
+  border-color: #5da9d6;
+}
+
+.tpl-diploma-aventura__contenido {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 18mm 32mm 13mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tpl-diploma-aventura__planet {
+  position: absolute;
+  top: 18mm;
+  left: 18mm;
+  width: 16mm;
+  height: 16mm;
+  border: 1.4mm solid #f0a83b;
+  border-radius: 50%;
+}
+
+.tpl-diploma-aventura__planet::after {
+  content: '';
+  position: absolute;
+  top: 6mm;
+  left: -4mm;
+  width: 22mm;
+  border-top: 0.7mm solid #5da9d6;
+  transform: rotate(-18deg);
+}
+
+.tpl-diploma-aventura__star {
+  position: absolute;
+  color: #f0a83b;
+  font-size: 24pt;
+}
+
+.tpl-diploma-aventura__star--one { top: 12mm; right: 24mm; }
+.tpl-diploma-aventura__star--two { bottom: 21mm; left: 28mm; color: #5da9d6; font-size: 16pt; }
+
+.tpl-diploma-aventura__eyebrow {
+  max-width: 100%;
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-aventura__rule {
+  width: 65mm;
+  margin: 5mm 0 8mm;
+  border-top: 0.7mm solid #f0a83b;
+}
+
+.tpl-diploma-aventura__encabezado {
+  color: #668098;
+  font-size: 13pt;
+  font-weight: 600;
+}
+
+.tpl-diploma-aventura h1 {
+  margin: 5mm 0 7mm;
+  color: #eb7650;
+  font-size: 26pt;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-aventura__a {
+  color: #668098;
+  font-size: 14pt;
+}
+
+.tpl-diploma-aventura__nombre {
+  margin: 4mm 0 2mm;
+  color: #23466f;
+  font-family: Georgia, serif;
+  font-size: 27pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpl-diploma-aventura__grado {
+  padding: 1.5mm 5mm;
+  border: 0.4mm solid #5da9d6;
+  border-radius: 20mm;
+  color: #34759c;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tpl-diploma-aventura p {
+  max-width: 150mm;
+  margin: 8mm 0 auto;
+  color: #526b7d;
+  font-family: Georgia, serif;
+  font-size: 13pt;
+  line-height: 1.35;
+}
+
+.tpl-diploma-aventura__pie {
+  margin-top: 6mm;
+  color: #668098;
+  font-size: 10pt;
+}
+
+.tpl-diploma-aventura__firma {
+  min-width: 64mm;
+  margin-top: 8mm;
+  padding-top: 2mm;
+  border-top: 0.35mm solid #23466f;
+  display: flex;
+  flex-direction: column;
+  font-size: 9pt;
+}
+
+.tpl-diploma-aventura__firma span:first-child { font-weight: 800; }

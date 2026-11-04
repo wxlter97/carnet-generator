@@ -1,0 +1,124 @@
+.tpl-diploma-geometrico {
+  background: #fff;
+  border: 0.7mm solid #183b56;
+  color: #183b56;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.tpl-diploma-geometrico::before,
+.tpl-diploma-geometrico::after {
+  content: '';
+  position: absolute;
+  width: 32mm;
+  height: 32mm;
+  border: 0.8mm solid #ef765b;
+  transform: rotate(45deg);
+}
+
+.tpl-diploma-geometrico::before { top: -23mm; left: -22mm; }
+.tpl-diploma-geometrico::after { right: -22mm; bottom: -23mm; border-color: #55b8a8; }
+
+.tpl-diploma-geometrico__contenido {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 20mm 30mm 13mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tpl-diploma-geometrico__barra {
+  position: absolute;
+  top: 20mm;
+  left: 20mm;
+  display: flex;
+  gap: 2mm;
+}
+
+.tpl-diploma-geometrico__barra span {
+  width: 5mm;
+  height: 5mm;
+  display: block;
+  transform: rotate(45deg);
+}
+
+.tpl-diploma-geometrico__barra span:nth-child(1) { background: #ef765b; }
+.tpl-diploma-geometrico__barra span:nth-child(2) { background: #f1bd62; }
+.tpl-diploma-geometrico__barra span:nth-child(3) { background: #55b8a8; }
+.tpl-diploma-geometrico__barra span:nth-child(4) { background: #7c67b5; }
+
+.tpl-diploma-geometrico__institucion {
+  max-width: 100%;
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-geometrico__encabezado {
+  margin-top: 10mm;
+  color: #657783;
+  font-size: 13pt;
+}
+
+.tpl-diploma-geometrico h1 {
+  margin: 5mm 0 8mm;
+  color: #ef765b;
+  font-size: 26pt;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-geometrico__a {
+  color: #657783;
+  font-size: 14pt;
+}
+
+.tpl-diploma-geometrico__nombre {
+  margin: 4mm 0 2mm;
+  color: #183b56;
+  font-family: Georgia, serif;
+  font-size: 28pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpl-diploma-geometrico__grado {
+  padding: 1.5mm 5mm;
+  border-radius: 1mm;
+  background: #e6f4f1;
+  color: #287c77;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tpl-diploma-geometrico p {
+  max-width: 145mm;
+  margin: 9mm 0 auto;
+  color: #526b7d;
+  font-family: Georgia, serif;
+  font-size: 13pt;
+  line-height: 1.35;
+}
+
+.tpl-diploma-geometrico__pie {
+  margin-top: 6mm;
+  color: #657783;
+  font-size: 10pt;
+}
+
+.tpl-diploma-geometrico__firma {
+  min-width: 64mm;
+  margin-top: 8mm;
+  padding-top: 2mm;
+  border-top: 0.35mm solid #183b56;
+  display: flex;
+  flex-direction: column;
+  font-size: 9pt;
+}
+
+.tpl-diploma-geometrico__firma span:first-child { font-weight: 800; }

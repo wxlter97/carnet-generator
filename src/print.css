@@ -8,6 +8,11 @@
     margin: 10mm;
   }
 
+  @page diploma-carta {
+    size: letter landscape;
+    margin: 8mm;
+  }
+
   body * {
     visibility: hidden;
   }
@@ -31,5 +36,18 @@
   /* Al imprimir siempre a tamaño real, sin importar el zoom elegido en pantalla. */
   .print-grid {
     zoom: 1 !important;
+  }
+
+  .print-grid--carta {
+    display: block;
+    page: diploma-carta;
+  }
+
+  .print-grid--carta > * {
+    break-after: page;
+  }
+
+  .print-grid--carta > *:last-child {
+    break-after: auto;
   }
 }

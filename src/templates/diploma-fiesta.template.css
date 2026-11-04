@@ -1,0 +1,184 @@
+.tpl-diploma-fiesta {
+  background: #fff;
+  border: 0.8mm solid #ef6b62;
+  color: #214b68;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.tpl-diploma-fiesta::before,
+.tpl-diploma-fiesta::after {
+  content: '';
+  position: absolute;
+  width: 25mm;
+  height: 25mm;
+  border-radius: 50%;
+}
+
+.tpl-diploma-fiesta::before {
+  top: -15mm;
+  left: -9mm;
+  background: #ffd35a;
+}
+
+.tpl-diploma-fiesta::after {
+  right: -10mm;
+  bottom: -14mm;
+  background: #70c7b5;
+}
+
+.tpl-diploma-fiesta__contenido {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 21mm 32mm 13mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tpl-diploma-fiesta__arcoiris {
+  position: absolute;
+  z-index: 1;
+  top: 12mm;
+  right: 23mm;
+  width: 29mm;
+  height: 29mm;
+  object-fit: contain;
+}
+
+.tpl-diploma-fiesta__estrella {
+  position: absolute;
+  z-index: 1;
+  top: 15mm;
+  left: 24mm;
+  width: 14mm;
+  height: 14mm;
+  object-fit: contain;
+}
+
+.tpl-diploma-fiesta__globo {
+  position: absolute;
+  z-index: 2;
+  width: 19mm;
+  height: 19mm;
+  object-fit: contain;
+}
+
+.tpl-diploma-fiesta__globo--one {
+  right: 14mm;
+  bottom: 19mm;
+  transform: rotate(8deg);
+}
+
+.tpl-diploma-fiesta__globo--two {
+  right: 29mm;
+  bottom: 15mm;
+  transform: rotate(-8deg);
+}
+
+.tpl-diploma-fiesta__globo--three {
+  left: 17mm;
+  bottom: 19mm;
+  transform: rotate(-12deg);
+}
+
+.tpl-diploma-fiesta__confeti {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tpl-diploma-fiesta__confeti i {
+  position: absolute;
+  width: 3mm;
+  height: 1.2mm;
+  display: block;
+  transform: rotate(35deg);
+}
+
+.tpl-diploma-fiesta__confeti i:nth-child(1) { top: 25mm; left: 28mm; background: #ef6b62; }
+.tpl-diploma-fiesta__confeti i:nth-child(2) { top: 38mm; right: 30mm; background: #70c7b5; transform: rotate(-25deg); }
+.tpl-diploma-fiesta__confeti i:nth-child(3) { top: 60mm; left: 17mm; background: #7d72c5; transform: rotate(80deg); }
+.tpl-diploma-fiesta__confeti i:nth-child(4) { top: 70mm; right: 18mm; background: #ffd35a; transform: rotate(20deg); }
+.tpl-diploma-fiesta__confeti i:nth-child(5) { bottom: 44mm; left: 27mm; background: #ffd35a; transform: rotate(-40deg); }
+.tpl-diploma-fiesta__confeti i:nth-child(6) { bottom: 39mm; right: 27mm; background: #ef6b62; transform: rotate(70deg); }
+.tpl-diploma-fiesta__confeti i:nth-child(7) { top: 31mm; left: 43mm; width: 2mm; height: 2mm; background: #70c7b5; border-radius: 50%; }
+.tpl-diploma-fiesta__confeti i:nth-child(8) { bottom: 28mm; right: 43mm; width: 2mm; height: 2mm; background: #7d72c5; border-radius: 50%; }
+
+.tpl-diploma-fiesta__institucion {
+  max-width: 100%;
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-fiesta__encabezado {
+  margin-top: 9mm;
+  color: #708391;
+  font-size: 13pt;
+  font-weight: 600;
+}
+
+.tpl-diploma-fiesta h1 {
+  margin: 5mm 0 7mm;
+  color: #ef6b62;
+  font-family: Georgia, serif;
+  font-size: 26pt;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tpl-diploma-fiesta__a {
+  color: #708391;
+  font-size: 14pt;
+}
+
+.tpl-diploma-fiesta__nombre {
+  margin: 4mm 0 2mm;
+  color: #214b68;
+  font-family: Georgia, serif;
+  font-size: 28pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpl-diploma-fiesta__grado {
+  padding: 1.5mm 5mm;
+  border-radius: 20mm;
+  background: #e6f4f1;
+  color: #287c77;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tpl-diploma-fiesta p {
+  max-width: 145mm;
+  margin: 9mm 0 auto;
+  color: #566f7f;
+  font-family: Georgia, serif;
+  font-size: 13pt;
+  line-height: 1.35;
+}
+
+.tpl-diploma-fiesta__pie {
+  margin-top: 6mm;
+  color: #708391;
+  font-size: 10pt;
+}
+
+.tpl-diploma-fiesta__firma {
+  min-width: 64mm;
+  margin-top: 8mm;
+  padding-top: 2mm;
+  border-top: 0.35mm solid #214b68;
+  display: flex;
+  flex-direction: column;
+  font-size: 9pt;
+}
+
+.tpl-diploma-fiesta__firma span:first-child { font-weight: 800; }
