@@ -1,0 +1,183 @@
+.tpl-diploma-reconocimiento {
+  background: #fffdf3;
+  border: 1.4mm solid #1760b5;
+  border-radius: 6mm;
+  color: #172f54;
+  font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+}
+
+.tpl-diploma-reconocimiento::before {
+  content: '';
+  position: absolute;
+  inset: 4mm;
+  border: 0.6mm dashed #2e82c9;
+  border-radius: 4mm;
+}
+
+.tpl-diploma-reconocimiento::after {
+  content: '✦  ✧  ✦  ✧  ✦';
+  position: absolute;
+  top: 8mm;
+  left: 50%;
+  z-index: 1;
+  color: #f3c928;
+  font-size: 15pt;
+  letter-spacing: 3mm;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.tpl-diploma-reconocimiento__contenido {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 18mm 42mm 12mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tpl-diploma-reconocimiento__institucion {
+  max-width: 100%;
+  margin-top: 2mm;
+  color: #151515;
+  font-family: 'Bradley Hand', 'Comic Sans MS', cursive;
+  font-size: 18pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpl-diploma-reconocimiento__encabezado {
+  margin-top: 2mm;
+  color: #111;
+  font-size: 14pt;
+}
+
+.tpl-diploma-reconocimiento h1 {
+  margin: 3mm 0 5mm;
+  color: #0758b5;
+  font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+  font-size: 35pt;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 1.5mm 1.5mm 0 #b9b9b9;
+}
+
+.tpl-diploma-reconocimiento__a {
+  color: #3a3a3a;
+  font-size: 13pt;
+}
+
+.tpl-diploma-reconocimiento__nombre {
+  margin: 2mm 0 1mm;
+  color: #332b13;
+  font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+  font-size: 24pt;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tpl-diploma-reconocimiento__grado {
+  padding: 1.2mm 5mm;
+  border-radius: 20mm;
+  background: #d7f0eb;
+  color: #147d70;
+  font-size: 10pt;
+  font-weight: 800;
+}
+
+.tpl-diploma-reconocimiento p {
+  max-width: 142mm;
+  margin: 6mm 0 auto;
+  color: #111;
+  font-size: 13pt;
+  line-height: 1.35;
+}
+
+.tpl-diploma-reconocimiento__pie {
+  margin-top: 4mm;
+  color: #333;
+  font-size: 10pt;
+}
+
+.tpl-diploma-reconocimiento__firmas {
+  width: 130mm;
+  margin-top: 6mm;
+  display: flex;
+  justify-content: space-between;
+  gap: 20mm;
+  color: #111;
+  font-size: 9pt;
+}
+
+.tpl-diploma-reconocimiento__firmas > div {
+  min-width: 48mm;
+  padding-top: 1.5mm;
+  border-top: 0.35mm solid #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.tpl-diploma-reconocimiento__firmas span { font-weight: 800; }
+.tpl-diploma-reconocimiento__firmas small { font-size: 8.5pt; }
+
+.tpl-diploma-reconocimiento__cap,
+.tpl-diploma-reconocimiento__nino,
+.tpl-diploma-reconocimiento__estrella {
+  position: absolute;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.tpl-diploma-reconocimiento__cap {
+  top: 17mm;
+  left: 50%;
+  width: 20mm;
+  height: 20mm;
+  transform: translateX(-50%);
+}
+
+.tpl-diploma-reconocimiento__nino {
+  bottom: 10mm;
+  width: 28mm;
+  height: 34mm;
+}
+
+.tpl-diploma-reconocimiento__nino--left {
+  left: 13mm;
+}
+
+.tpl-diploma-reconocimiento__nino--right {
+  right: 13mm;
+  transform: scaleX(-1);
+}
+
+.tpl-diploma-reconocimiento__estrella {
+  width: 14mm;
+  height: 14mm;
+}
+
+.tpl-diploma-reconocimiento__estrella--left {
+  top: 29mm;
+  left: 25mm;
+}
+
+.tpl-diploma-reconocimiento__estrella--right {
+  top: 29mm;
+  right: 25mm;
+  transform: scale(0.8);
+}
+
+.tpl-diploma-reconocimiento__garabato {
+  position: absolute;
+  right: 18mm;
+  bottom: 13mm;
+  width: 24mm;
+  height: 15mm;
+  border: 0.7mm solid #f3c928;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}

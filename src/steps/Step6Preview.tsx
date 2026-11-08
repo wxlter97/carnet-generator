@@ -41,7 +41,7 @@ export function Step6Preview() {
             {registros.length} documento(s)
             {plantilla.campoFoto &&
               ` — ${conFoto} con foto, ${registros.length - conFoto} con silueta de respaldo`}
-            . Tamaño real: {plantilla.formato === 'carta' ? 'carta (8.5 × 11 pulgadas)' : '85.6 × 54 mm (CR80)'}.
+            . Tamaño real: {plantilla.formato === 'carta' ? 'carta horizontal (11 × 8.5 pulgadas)' : '85.6 × 54 mm (CR80)'}.
           </p>
           {plantilla.campoFoto && conFoto === 0 && state.nombreArchivoFotos && (
             <p className="mensaje-alerta">

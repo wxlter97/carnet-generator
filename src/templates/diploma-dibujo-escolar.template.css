@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Patrick+Hand&display=swap');
+
+/* Hoja carta horizontal. Posiciones en % (calcadas de la referencia), tamaños en mm/pt. */
+.tpl-diploma-dibujo-escolar {
+  position: relative;
+  overflow: hidden;
+  border: 0 !important;
+  background: #fffaf0;
+  color: #2b4a99;
+  font-family: 'Patrick Hand', 'Fredoka', 'Comic Sans MS', sans-serif;
+}
+
+/* Marco azul doble tipo crayón */
+.tpl-diploma-dibujo-escolar__borde {
+  position: absolute;
+  inset: 2.5mm;
+  border: 4.4mm solid #4a86d8;
+  border-radius: 5mm 7mm 5mm 8mm / 7mm 5mm 8mm 5mm;
+  z-index: 1;
+}
+
+.tpl-diploma-dibujo-escolar__deco {
+  position: absolute;
+  z-index: 1;
+  object-fit: contain;
+}
+.tpl-diploma-dibujo-escolar__personaje {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+.tpl-diploma-dibujo-escolar__personaje img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+.tpl-diploma-dibujo-escolar__sol {
+  top: 11%;
+  width: 9%;
+}
+.tpl-diploma-dibujo-escolar__sol--izquierda {
+  left: 7%;
+}
+.tpl-diploma-dibujo-escolar__sol--derecha {
+  right: 7%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__nube {
+  top: 8%;
+  width: 10%;
+}
+.tpl-diploma-dibujo-escolar__nube--izquierda {
+  left: 20%;
+}
+.tpl-diploma-dibujo-escolar__nube--derecha {
+  right: 20%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__crayones {
+  top: 48%;
+  width: 11%;
+}
+.tpl-diploma-dibujo-escolar__crayones--izquierda {
+  left: 3%;
+}
+.tpl-diploma-dibujo-escolar__crayones--derecha {
+  right: 3%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__arcoiris {
+  bottom: 3%;
+  width: 10%;
+}
+.tpl-diploma-dibujo-escolar__arcoiris--izquierda {
+  left: 37%;
+}
+.tpl-diploma-dibujo-escolar__arcoiris--derecha {
+  right: 37%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__nino {
+  left: 7%;
+  top: 65%;
+  width: 11%;
+  height: 24%;
+}
+.tpl-diploma-dibujo-escolar__nino img {
+  position: absolute;
+  left: 0;
+}
+.tpl-diploma-dibujo-escolar__nina {
+  left: 83%;
+  top: 64%;
+  width: 16%;
+  height: 26%;
+}
+.tpl-diploma-dibujo-escolar__nina img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__lapiz {
+  bottom: 3.5%;
+  width: 15.5%;
+}
+.tpl-diploma-dibujo-escolar__lapiz--izquierda {
+  left: 4%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__lapiz--derecha {
+  right: 4%;
+}
+.tpl-diploma-dibujo-escolar__estrella {
+  top: 84.5%;
+  width: 15mm;
+}
+.tpl-diploma-dibujo-escolar__estrella--izquierda {
+  left: 43%;
+}
+.tpl-diploma-dibujo-escolar__estrella--derecha {
+  right: 43%;
+  transform: scaleX(-1);
+}
+.tpl-diploma-dibujo-escolar__libros {
+  bottom: 3%;
+  width: 12%;
+}
+.tpl-diploma-dibujo-escolar__libros--izquierda {
+  left: 23%;
+}
+.tpl-diploma-dibujo-escolar__libros--derecha {
+  right: 23%;
+  transform: scaleX(-1);
+}
+
+.tpl-diploma-dibujo-escolar__glifo {
+  position: absolute;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* Textos */
+.tpl-diploma-dibujo-escolar__institucion {
+  position: absolute;
+  z-index: 3;
+  left: 6%;
+  right: 6%;
+  top: 4.5%;
+  color: #111;
+  font-family: 'Patrick Hand', 'Fredoka', 'Comic Sans MS', sans-serif;
+  font-size: 21pt;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tpl-diploma-dibujo-escolar__encabezado {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 10%;
+  text-align: center;
+  color: #1d3f8f;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14pt;
+}
+
+.tpl-diploma-dibujo-escolar__titulo {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 13%;
+  margin: 0;
+  text-align: center;
+  font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+  font-weight: 700;
+  font-size: 100pt;
+  line-height: 1;
+  letter-spacing: 1mm;
+  white-space: nowrap;
+  transform: scaleY(1.15);
+  transform-origin: center top;
+  -webkit-text-stroke: 0.6mm currentColor;
+  paint-order: stroke fill;
+  text-shadow: 0.6mm 0.8mm 0 rgba(0, 0, 0, 0.12);
+}
+.tpl-diploma-dibujo-escolar__titulo span { -webkit-text-stroke: 0.6mm currentColor; }
+
+/* Cinta morada con muescas */
+.tpl-diploma-dibujo-escolar__cinta {
+  position: absolute;
+  z-index: 2;
+  left: 28%;
+  top: 34%;
+  width: 44%;
+  height: 6.8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tpl-diploma-dibujo-escolar__cinta svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.tpl-diploma-dibujo-escolar__cinta span {
+  position: relative;
+  color: #2a4a9a;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14pt;
+  white-space: nowrap;
+}
+
+/* Nombre sobre la línea */
+.tpl-diploma-dibujo-escolar__nombre {
+  position: absolute;
+  z-index: 2;
+  left: 24.5%;
+  top: 42.5%;
+  width: 51%;
+  height: 7.4%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1mm;
+  border-bottom: 0.4mm solid #6a63a8;
+  color: #1d2f6b;
+  font-family: 'Patrick Hand', 'Fredoka', sans-serif;
+  white-space: nowrap;
+}
+
+/* Párrafo */
+.tpl-diploma-dibujo-escolar__texto {
+  position: absolute;
+  z-index: 2;
+  left: 10%;
+  top: 52%;
+  width: 80%;
+  text-align: center;
+}
+.tpl-diploma-dibujo-escolar__linea {
+  font-size: 14pt;
+  line-height: 1.6;
+}
+.tpl-diploma-dibujo-escolar__grado { font-family: 'Fredoka', sans-serif; font-size: 16pt; letter-spacing: 0.2mm; }
+.tpl-diploma-dibujo-escolar__pasar {
+  margin-top: 1mm;
+  font-size: 20pt;
+  line-height: 1.4;
+}
+.tpl-diploma-dibujo-escolar__pasar b { font-family: 'Fredoka', sans-serif; font-size: 22pt; letter-spacing: 0.3mm; }
+.tpl-diploma-dibujo-escolar__signo { color: #ec5a9a; font-family: 'Fredoka', sans-serif; font-size: 22pt; font-weight: 700; }
+.tpl-diploma-dibujo-escolar__mensaje {
+  margin-top: 3mm;
+  color: #8a56c9;
+  font-size: 13pt;
+}
+
+/* Firmas */
+.tpl-diploma-dibujo-escolar__firma {
+  position: absolute;
+  z-index: 2;
+  top: 81.7%;
+  padding-top: 1mm;
+  border-top: 0.4mm solid #6a63a8;
+  text-align: center;
+  color: #2a4a9a;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 9pt;
+  font-weight: 600;
+}
+.tpl-diploma-dibujo-escolar__firma--izq { left: 23%; width: 19%; }
+.tpl-diploma-dibujo-escolar__firma--der { left: 60%; width: 16%; }

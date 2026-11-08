@@ -79,6 +79,7 @@ interface WizardContextValue {
   fotos: MapaFotos;
   setFotos: (fotos: MapaFotos) => void;
   reiniciarTodo: () => void;
+  restaurarProyecto: (estado: WizardState) => void;
 }
 
 const WizardContext = createContext<WizardContextValue | null>(null);
@@ -123,6 +124,13 @@ export function WizardProvider({ children }: { children: ReactNode }) {
         });
         limpiarEstado();
         dispatch({ type: 'REINICIAR' });
+      },
+      restaurarProyecto: (estado) => {
+        setFotosState((anteriores) => {
+          revocarFotos(anteriores);
+          return new Map();
+        });
+        dispatch({ type: 'RESTAURAR', estado });
       },
     }),
     [state, fotos],

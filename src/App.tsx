@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useWizard } from './state/WizardContext';
 import { getPlantilla } from './templates';
 import { Stepper } from './components/Stepper';
@@ -10,12 +10,15 @@ import { Step4FixedFields } from './steps/Step4FixedFields';
 import { Step5UploadPhotos } from './steps/Step5UploadPhotos';
 import { Step6Preview } from './steps/Step6Preview';
 import { pasoValido } from './state/validacion';
+import { descargarProyecto, leerProyecto } from './utils/proyecto';
 
 const TOTAL_PASOS = 6;
 const PORTFOLIO_HOME_URL = 'https://home.wxlter.dev/';
 
 function App() {
-  const { state, dispatch, reiniciarTodo } = useWizard();
+  const { state, dispatch, reiniciarTodo, restaurarProyecto } = useWizard();
+  const archivoProyectoRef = useRef<HTMLInputElement>(null);
+  const [errorProyecto, setErrorProyecto] = useState<string | null>(null);
   const plantilla = getPlantilla(state.plantillaId);
 
   // El máximo paso al que se puede saltar es el primero que falla + 1: no
@@ -34,6 +37,17 @@ function App() {
     dispatch({ type: 'IR_A_PASO', paso });
   }
 
+  async function importarProyecto(archivo: File): Promise<void> {
+    try {
+      const estado = await leerProyecto(archivo);
+      restaurarProyecto(estado);
+      setErrorProyecto(null);
+      dispatch({ type: 'IR_A_PASO', paso: 1 });
+    } catch (error) {
+      setErrorProyecto(error instanceof Error ? error.message : 'No se pudo leer el proyecto.');
+    }
+  }
+
   return (
     <div className="app-shell">
       <header className="app-header no-imprimir">
@@ -48,7 +62,32 @@ function App() {
         }}>
           Empezar de nuevo
         </button>
+        <div className="proyecto-controles">
+          <button type="button" className="boton-texto" onClick={() => descargarProyecto(state)}>
+            Descargar datos
+          </button>
+          <button type="button" className="boton-texto" onClick={() => archivoProyectoRef.current?.click()}>
+            Cargar datos
+          </button>
+          <input
+            ref={archivoProyectoRef}
+            className="sr-only"
+            type="file"
+            accept=".json,application/json"
+            onChange={(event) => {
+              const archivo = event.target.files?.[0];
+              event.target.value = '';
+              if (archivo) void importarProyecto(archivo);
+            }}
+          />
+        </div>
       </header>
+
+      {errorProyecto && (
+        <p className="mensaje-alerta no-imprimir" role="alert">
+          {errorProyecto}
+        </p>
+      )}
 
       <Stepper pasoActual={state.paso} maxPasoHabilitado={maxPasoHabilitado} onIrAPaso={irAPaso} />
 

@@ -52,6 +52,41 @@ body {
   border-bottom: var(--rule);
 }
 
+.proyecto-controles {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.plantilla-datos-descarga {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 18px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.plantilla-datos-descarga p {
+  margin: 4px 0 0;
+  color: var(--color-label);
+  font-size: 13px;
+}
+
 .app-header__titulo {
   display: flex;
   align-items: center;
@@ -327,6 +362,15 @@ body {
   transform: scale(0.655);
   transform-origin: top left;
   pointer-events: none;
+}
+
+.plantilla-miniatura--carta {
+  width: 212px;
+  aspect-ratio: 250 / 185;
+}
+
+.plantilla-miniatura--carta .plantilla-miniatura__escala {
+  transform: scale(0.224);
 }
 
 .plantilla-card__info {

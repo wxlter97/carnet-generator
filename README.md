@@ -18,6 +18,11 @@ para sobrevivir un refresh accidental. Las fotos no se persisten (son
 demasiado pesadas y viven como blobs en memoria) — hay que volver a subir el
 ZIP si se recarga la página.
 
+Desde el encabezado también se puede **Descargar datos** para guardar un
+proyecto completo como archivo JSON y usar **Cargar datos** posteriormente para
+regenerarlo. El archivo incluye la plantilla, estudiantes, mapeo de columnas y
+campos fijos; las fotos deben volver a cargarse si la plantilla las utiliza.
+
 ## Agregar una plantilla nueva
 
 Cada plantilla vive en `src/templates/*.template.tsx` y se registra
@@ -36,7 +41,7 @@ Una `PlantillaDefinicion` declara:
 - `camposFijos`: campos que se llenan una sola vez para todo el lote.
 - Cada campo fijo puede declarar `valorPorDefecto`; si el usuario no lo modifica,
   ese valor se usa automáticamente y el paso no queda bloqueado por estar vacío.
-- `formato`: `carnet` para CR80 o `carta` para documentos de 250 × 190 mm dentro de una página carta horizontal.
+- `formato`: `carnet` para CR80 o `carta` para documentos de 250 × 185 mm dentro de una página carta horizontal.
 - `Render`: el componente que dibuja el documento (las plantillas CR80 deben usar la clase `carnet-base`; las de carta deben definir su tamaño carta).
 
 Las plantillas de diploma usan `formato: 'carta'` en orientación horizontal y
@@ -52,6 +57,9 @@ Actualmente hay cuatro estilos de diploma:
 - **Jardín de Estrellas** — constelaciones y detalles suaves.
 - **Arcoíris Geométrico** — formas y acentos de colores.
 - **Fiesta de Colores** — globos, arcoíris, confeti y formas infantiles.
+- **Reconocimiento Infantil** — composición escolar ilustrada con birrete, estrella y niño.
+- **Reconocimiento de Graduación** — ceremonia infantil con estrellas, birrete y estudiantes.
+- **Diploma Dibujo Escolar** — estilo hecho a mano con arcoíris, útiles y niños.
 
 Todos usan fondo blanco y ornamentos en líneas o formas para reducir el uso de
 tinta, manteniendo los textos configurables.

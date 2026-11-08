@@ -1,0 +1,7 @@
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <polygon fill="#3f3f3f" points="4,22.875 68,22.875 36,10 4,22.875"/>
+  <polygon fill="#f1b31c" points="36,10 68,22.875 36,35.75 4,22.875"/>
+  <path fill="#3f3f3f" d="M16 28v18h40V28L36 36z"/>
+  <circle cx="10" cy="37" r="2" fill="#f1b31c"/>
+  <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 22.875h64L36 10 4 22.875zm12 5v18h40v-18M10 28.5v8.4"/>
+</svg>

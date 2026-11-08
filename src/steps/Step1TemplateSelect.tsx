@@ -45,7 +45,7 @@ export function Step1TemplateSelect() {
               className={`plantilla-card ${seleccionada ? 'plantilla-card--activa' : ''}`}
               onClick={() => dispatch({ type: 'ELEGIR_PLANTILLA', plantillaId: plantilla.id })}
             >
-              <div className="plantilla-miniatura">
+              <div className={`plantilla-miniatura plantilla-miniatura--${plantilla.formato}`}>
                 <div className="plantilla-miniatura__escala">
                   <plantilla.Render valores={valores} fijos={fijos} />
                 </div>

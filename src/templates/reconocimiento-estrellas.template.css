@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&family=Playpen+Sans:wght@500;800&display=swap');
+
+/* Hoja carta horizontal (279.4 x 215.9 mm). Medidas calcadas de la referencia (1600x1236 px). */
+.tpl-reconocimiento-estrellas {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  background: #fff;
+  color: #111;
+  font-family: 'Fredoka', 'Trebuchet MS', sans-serif;
+}
+
+.tpl-reconocimiento-estrellas__marco {
+  position: absolute;
+  inset: 5mm;
+  border: 4.4mm solid #0a49a8;
+  border-radius: 7mm;
+  z-index: 1;
+}
+
+.tpl-reconocimiento-estrellas__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.tpl-reconocimiento-estrellas__titulo {
+  fill: #0b47a9;
+  stroke: #0b47a9;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  font-family: 'Pacifico', cursive;
+  font-size: 100px;
+  text-anchor: middle;
+}
+.tpl-reconocimiento-estrellas__titulo-sombra {
+  fill: #c9c9c9;
+  stroke: #c9c9c9;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  font-family: 'Pacifico', cursive;
+  font-size: 100px;
+  text-anchor: middle;
+}
+
+/* Ilustraciones */
+.tpl-reconocimiento-estrellas__faja {
+  position: absolute;
+  z-index: 2;
+  inset: 10mm;
+  background-repeat: repeat;
+  background-size: 74mm auto;
+  background-position: center;
+  opacity: 0.62;
+}
+.tpl-reconocimiento-estrellas__ninos {
+  position: absolute;
+  z-index: 3;
+  bottom: 26mm;
+  width: 48mm;
+  height: 52mm;
+  object-fit: contain;
+}
+.tpl-reconocimiento-estrellas__ninos--izquierda {
+  left: 16mm;
+}
+.tpl-reconocimiento-estrellas__ninos--derecha {
+  right: 16mm;
+  transform: scaleX(-1);
+}
+.tpl-reconocimiento-estrellas__foto {
+  position: absolute;
+  z-index: 4;
+  left: 22mm;
+  top: 33mm;
+  width: 25mm;
+  height: 32mm;
+  padding: 1.2mm;
+  border: 0.7mm solid #0a49a8;
+  border-radius: 2.5mm;
+  background: #fff;
+  box-shadow: 1.2mm 1.2mm 0 #d9e3f2;
+}
+.tpl-reconocimiento-estrellas__foto > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #edf3fb;
+  color: #0a49a8;
+  border-radius: 1mm;
+}
+.tpl-reconocimiento-estrellas__foto img {
+  object-fit: cover;
+}
+
+/* Textos */
+.tpl-reconocimiento-estrellas__institucion {
+  position: absolute;
+  z-index: 4;
+  left: 24mm;
+  right: 24mm;
+  top: 20mm;
+  text-align: center;
+  font-family: 'Playpen Sans', 'Comic Sans MS', cursive;
+  font-weight: 800;
+  font-size: 21pt;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.tpl-reconocimiento-estrellas__encabezado {
+  position: absolute;
+  z-index: 4;
+  left: 24mm;
+  right: 24mm;
+  top: 38mm;
+  text-align: center;
+  font-size: 15pt;
+  line-height: 1.3;
+}
+
+.tpl-reconocimiento-estrellas__nombre {
+  position: absolute;
+  z-index: 4;
+  left: 24mm;
+  right: 24mm;
+  width: auto;
+  top: 79mm;
+  min-height: 19mm;
+  padding: 2mm 3mm;
+  box-sizing: border-box;
+  text-align: center;
+  color: #4a3410;
+  font-family: 'Playpen Sans', 'Comic Sans MS', cursive;
+  font-weight: 800;
+  line-height: 1.08;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-shadow: 0.4mm 0.5mm 0 rgba(0, 0, 0, 0.18);
+}
+
+.tpl-reconocimiento-estrellas__texto {
+  position: absolute;
+  z-index: 4;
+  left: 67mm;
+  right: 67mm;
+  width: auto;
+  top: 110mm;
+  box-sizing: border-box;
+  padding: 0 1mm;
+  text-align: center;
+}
+.tpl-reconocimiento-estrellas__texto p {
+  margin: 0;
+  font-size: 15pt;
+  font-weight: 400;
+  line-height: 1.28;
+  text-wrap: balance;
+}
+
+/* Firmas: la línea es opcional, bórrala si prefieres solo la etiqueta como en la referencia */
+.tpl-reconocimiento-estrellas__firmas {
+  position: absolute;
+  z-index: 4;
+  left: 24mm;
+  right: 24mm;
+  top: 151mm;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  gap: 9mm;
+  font-size: 10pt;
+}
+.tpl-reconocimiento-estrellas__firmas span {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 54mm;
+  padding-top: 1mm;
+  border-top: 0.3mm solid #111;
+  text-align: center;
+}

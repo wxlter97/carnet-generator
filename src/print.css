@@ -40,7 +40,14 @@
 
   .print-grid--carta {
     display: block;
+    width: 250mm;
     page: diploma-carta;
+  }
+
+  .documento-carta {
+    page: diploma-carta;
+    width: 250mm;
+    height: 185mm;
   }
 
   .print-grid--carta > * {

@@ -4,6 +4,7 @@ import { parseDataFile } from '../utils/parseFile';
 import { IconCheck, IconDocument } from '../components/icons';
 import { getPlantilla } from '../templates';
 import type { FilaCruda } from '../types';
+import { descargarPlantillaDatos } from '../utils/plantillaDatos';
 
 export function Step2UploadData() {
   const { state, dispatch } = useWizard();
@@ -75,6 +76,17 @@ export function Step2UploadData() {
       <p className="paso-descripcion">
         Puedes cargar un CSV/Excel o escribir el listado directamente desde la app.
       </p>
+      {plantilla && (
+        <div className="plantilla-datos-descarga">
+          <div>
+            <strong>¿Prefieres preparar los datos en Excel?</strong>
+            <p>Descarga la plantilla de <b>{plantilla.nombre}</b> con las columnas necesarias.</p>
+          </div>
+          <button type="button" className="boton-secundario" onClick={() => descargarPlantillaDatos(plantilla)}>
+            Descargar plantilla CSV
+          </button>
+        </div>
+      )}
 
       <div className="datos-opciones">
         <div
