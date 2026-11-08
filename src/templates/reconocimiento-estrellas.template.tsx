@@ -40,8 +40,14 @@ const plantilla: PlantillaDefinicion = {
           style={{ backgroundImage: `url(${asset('reconocimiento-faja.png')})` }}
           aria-hidden="true"
         />
-        <img className="tpl-reconocimiento-estrellas__ninos tpl-reconocimiento-estrellas__ninos--izquierda" src={asset('reconocimiento-ninos.png')} alt="" />
-        <img className="tpl-reconocimiento-estrellas__ninos tpl-reconocimiento-estrellas__ninos--derecha" src={asset('reconocimiento-ninos.png')} alt="" />
+        <div className="tpl-reconocimiento-estrellas__ninos-base tpl-reconocimiento-estrellas__ninos-base--izquierda" aria-hidden="true">
+          <span className="tpl-reconocimiento-estrellas__sombra" />
+          <img className="tpl-reconocimiento-estrellas__ninos" src={asset('reconocimiento-ninos.png')} alt="" />
+        </div>
+        <div className="tpl-reconocimiento-estrellas__ninos-base tpl-reconocimiento-estrellas__ninos-base--derecha" aria-hidden="true">
+          <span className="tpl-reconocimiento-estrellas__sombra" />
+          <img className="tpl-reconocimiento-estrellas__ninos" src={asset('reconocimiento-ninos.png')} alt="" />
+        </div>
         <div className="tpl-reconocimiento-estrellas__foto">
           <FotoCarnet url={fotoUrl} nombre={nombre} />
         </div>

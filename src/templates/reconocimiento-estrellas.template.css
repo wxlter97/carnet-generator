@@ -54,20 +54,41 @@
   background-position: center;
   opacity: 0.62;
 }
-.tpl-reconocimiento-estrellas__ninos {
+.tpl-reconocimiento-estrellas__ninos-base {
   position: absolute;
   z-index: 3;
-  bottom: 26mm;
+  bottom: 18mm;
+  width: 58mm;
+  height: 62mm;
+}
+.tpl-reconocimiento-estrellas__ninos-base--izquierda {
+  left: 16mm;
+}
+.tpl-reconocimiento-estrellas__ninos-base--derecha {
+  right: 16mm;
+}
+.tpl-reconocimiento-estrellas__ninos {
+  position: absolute;
+  z-index: 2;
+  left: 5mm;
+  bottom: 7mm;
   width: 48mm;
   height: 52mm;
   object-fit: contain;
 }
-.tpl-reconocimiento-estrellas__ninos--izquierda {
-  left: 16mm;
-}
-.tpl-reconocimiento-estrellas__ninos--derecha {
-  right: 16mm;
+.tpl-reconocimiento-estrellas__ninos-base--derecha .tpl-reconocimiento-estrellas__ninos {
   transform: scaleX(-1);
+}
+.tpl-reconocimiento-estrellas__sombra {
+  position: absolute;
+  z-index: 1;
+  left: 1mm;
+  right: 1mm;
+  bottom: 4mm;
+  height: 8mm;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(47, 78, 115, 0.32) 0%, rgba(47, 78, 115, 0.16) 58%, rgba(47, 78, 115, 0) 78%);
+  box-shadow: 0 1.2mm 0 rgba(10, 73, 168, 0.12);
 }
 .tpl-reconocimiento-estrellas__foto {
   position: absolute;
